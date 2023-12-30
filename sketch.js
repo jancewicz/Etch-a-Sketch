@@ -7,12 +7,12 @@ function printGrid() {
 
     let style = `
     display: flex;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border: auto;
-    background-color: black;
+    background-color: white;
     border-style: solid;
-    border-color: violet;
+    border-color: black;
 `;
 
     for (let i = 0; i < height; i++) {
@@ -27,10 +27,20 @@ function printGrid() {
 
         }
         container.appendChild(row);
-
-
     }
 }
 
 
+
+function changeColor() {
+    const squares = document.querySelectorAll(".box");
+    var mouseover = function () {
+        this.style.backgroundColor = "#FF0000";
+    }
+    squares.forEach(square => {
+        square.addEventListener("mouseover", mouseover);
+    })
+}
+
 printGrid();
+changeColor();
