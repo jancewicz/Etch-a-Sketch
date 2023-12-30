@@ -1,0 +1,9 @@
+#square {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border: auto;
+    background-color: black;
+    border-style: solid;
+    border-color: violet;
+}
