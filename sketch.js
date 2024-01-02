@@ -30,8 +30,29 @@ function printGrid() {
     }
 }
 
+function getRandomRGB() {
+    nums = [];
+    for (i = 0; i < 3; i++) {
+        nums.push(Math.floor(Math.random() * 256));
+    }
+    return nums.toString();
+}
+
 const mouseover = function () {
     this.style.backgroundColor = "#FF0000";
+}
+
+const randomRGBmouseover = function () {
+    const randomRGB = getRandomRGB();
+    this.style.backgroundColor = `rgb(${randomRGB})`;
+}
+
+
+function randomColor() {
+    const squares = document.querySelectorAll(".box");
+    squares.forEach(square => {
+        square.addEventListener("mouseover", randomRGBmouseover);
+    })
 }
 
 function changeColor() {
@@ -53,15 +74,8 @@ function clearField() {
 function removeColorChange() {
     const squares = document.querySelectorAll(".box");
     squares.forEach(square => {
-        square.removeEventListener("mouseover", mouseover)
-    })
-}
-
-function clearFieldButton() {
-    const clearFieldButton = document.getElementById('clearBTN');
-    clearFieldButton.addEventListener('click', function () {
-        removeColorChange();
-        clearField();
+        square.removeEventListener("mouseover", mouseover);
+        square.removeEventListener("mouseover", randomRGBmouseover);
     })
 }
 
@@ -72,6 +86,25 @@ function redButton() {
     });
 }
 
+function getFunkyButton() {
+    const funkyButton = document.getElementById("randomBTN");
+    funkyButton.addEventListener("click", function () {
+        randomColor();
+    })
+}
+
+
+function clearFieldButton() {
+    const clearFieldButton = document.getElementById('clearBTN');
+    clearFieldButton.addEventListener('click', function () {
+        removeColorChange();
+        clearField();
+    })
+}
+
+
+
 printGrid();
 redButton();
 clearFieldButton();
+getFunkyButton();
