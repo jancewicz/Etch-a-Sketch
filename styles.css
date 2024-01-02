@@ -6,7 +6,8 @@
     font-weight: bold;
 }
 
-#container {
+.gameField {
+    display: flex;
     justify-content: center;
 }
 
@@ -18,4 +19,11 @@
     background-color: white;
     border-style: solid;
     border-color: black;
+}
+
+.containerBTN {
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+
 }

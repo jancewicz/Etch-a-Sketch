@@ -30,17 +30,48 @@ function printGrid() {
     }
 }
 
-
+const mouseover = function () {
+    this.style.backgroundColor = "#FF0000";
+}
 
 function changeColor() {
+
     const squares = document.querySelectorAll(".box");
-    var mouseover = function () {
-        this.style.backgroundColor = "#FF0000";
-    }
     squares.forEach(square => {
         square.addEventListener("mouseover", mouseover);
     })
 }
 
+function clearField() {
+    const squares = document.querySelectorAll(".box");
+    squares.forEach(square => {
+        square.style.backgroundColor = "#FFFAF0";
+    });
+
+}
+
+function removeColorChange() {
+    const squares = document.querySelectorAll(".box");
+    squares.forEach(square => {
+        square.removeEventListener("mouseover", mouseover)
+    })
+}
+
+function clearFieldButton() {
+    const clearFieldButton = document.getElementById('clearBTN');
+    clearFieldButton.addEventListener('click', function () {
+        removeColorChange();
+        clearField();
+    })
+}
+
+function redButton() {
+    const redButton = document.getElementById('colorBTN');
+    redButton.addEventListener('click', function () {
+        changeColor();
+    });
+}
+
 printGrid();
-changeColor();
+redButton();
+clearFieldButton();
