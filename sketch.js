@@ -1,26 +1,33 @@
-function printGrid() {
-    let height = 32;
-    let width = 32;
+function printGrid(rows, cols) {
+
+    if (arguments.length === 0) {
+        rows = 16;
+        cols = 16;
+    }
     const container = document.getElementById("container");
     const square = document.getElementById("square");
+    let gridSize = 400;
+    let squareSize = gridSize / Math.max(rows, cols);
 
 
-    let style = `
-    flex: 1;
-    aspect-ratio: 1 / 1;
-    border: auto;
-    backgrond-color: white;
-    border-style: solid;
-    border-color: black;
-`;
 
-    for (let i = 0; i < height; i++) {
+    let style =
+        `flex: 1; 
+        aspect-ratio: 1 / 1; 
+        border: auto; 
+        background-color: white; 
+        border-style: solid; 
+        border-color: black; 
+        width: ${squareSize}px; 
+        height: ${squareSize}px;`;
+
+    for (let i = 0; i < rows; i++) {
         let row = document.createElement("div");
         row.id = "row" + i;
         row.style.cssText = "display: flex;"
-        for (let j = 0; j < width; j++) {
+        for (let j = 0; j < cols; j++) {
             let clone = square.cloneNode(true);
-            clone.idd = "clone" + i + "-" + j;
+            clone.id = "clone" + i + "-" + j;
             clone.style.cssText = style;
             row.appendChild(clone)
 

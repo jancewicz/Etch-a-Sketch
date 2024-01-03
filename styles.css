@@ -185,3 +185,14 @@
     border-color: white;
     border-style: inset;
 }
+
+.slidecontainer {
+    display: flex;
+    justify-content: center;
+    background-color: #d4b877;
+}
+
+.slide {
+    margin: 50px;
+    width: 200px;
+}
