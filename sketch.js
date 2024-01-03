@@ -1,16 +1,15 @@
 function printGrid() {
-    let height = 16;
-    let width = 16;
+    let height = 32;
+    let width = 32;
     const container = document.getElementById("container");
     const square = document.getElementById("square");
 
 
     let style = `
-    display: flex;
-    height: 30px;
-    width: 30px;
+    flex: 1;
+    aspect-ratio: 1 / 1;
     border: auto;
-    background-color: white;
+    backgrond-color: white;
     border-style: solid;
     border-color: black;
 `;
@@ -38,8 +37,16 @@ function getRandomRGB() {
     return nums.toString();
 }
 
-const mouseover = function () {
+const redMouseover = function () {
     this.style.backgroundColor = "#FF0000";
+}
+
+const blueMouseover = function () {
+    this.style.backgroundColor = "#1500ff";
+}
+
+const greenMouseover = function () {
+    this.style.backgroundColor = "#0ceb2d";
 }
 
 const randomRGBmouseover = function () {
@@ -57,11 +64,25 @@ function randomColor() {
     })
 }
 
-function changeColor() {
+function changeColorRed() {
 
     const squares = document.querySelectorAll(".box");
     squares.forEach(square => {
-        square.addEventListener("mouseover", mouseover);
+        square.addEventListener("mouseover", redMouseover);
+    })
+}
+
+function changeColorBlue() {
+    const squares = document.querySelectorAll(".box");
+    squares.forEach(square => {
+        square.addEventListener("mouseover", blueMouseover);
+    })
+}
+
+function changeColorGreen() {
+    const squares = document.querySelectorAll(".box");
+    squares.forEach(square => {
+        square.addEventListener("mouseover", greenMouseover);
     })
 }
 
@@ -76,7 +97,9 @@ function clearField() {
 function removeColorChange() {
     const squares = document.querySelectorAll(".box");
     squares.forEach(square => {
-        square.removeEventListener("mouseover", mouseover);
+        square.removeEventListener("mouseover", redMouseover);
+        square.removeEventListener("mouseover", blueMouseover);
+        square.removeEventListener("mouseover", greenMouseover);
         square.removeEventListener("mouseover", randomRGBmouseover);
     })
 }
@@ -86,8 +109,22 @@ function removeColorChange() {
 function redButton() {
     const redButton = document.getElementById('redBTN');
     redButton.addEventListener('click', function () {
-        changeColor();
+        changeColorRed();
     });
+}
+
+function blueButton() {
+    const blueButton = document.getElementById('blueBTN');
+    blueButton.addEventListener('click', function () {
+        changeColorBlue();
+    })
+}
+
+function greenButton() {
+    const blueButton = document.getElementById('greenBTN');
+    blueButton.addEventListener('click', function () {
+        changeColorGreen();
+    })
 }
 
 function getFunkyButton() {
@@ -110,5 +147,7 @@ function clearFieldButton() {
 
 printGrid();
 redButton();
+blueButton();
+greenButton();
 clearFieldButton();
 getFunkyButton();

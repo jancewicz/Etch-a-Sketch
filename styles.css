@@ -1,22 +1,26 @@
-* {
-    box-sizing: border-box;
-}
-
 .test {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: blanchedalmond;
+    background-color: #d4b877
 }
 
 
 #header {
     display: flex;
     justify-content: center;
-    background-color: blanchedalmond;
-    font-family: Helvetica, sans-serif;
-    font-weight: bold;
+    background-color: #d4b877;
+    color: #d54d7b;
+    font-family: "Great Vibes", cursive;
+    font-size: 32px;
+    line-height: 80px;
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
 }
+
 
 .gameField {
     display: flex;
@@ -33,13 +37,17 @@
     border-color: black;
 }
 
+.gameField {
+    max-width: 960px;
+}
+
 
 .choice {
     display: flex;
     align-self: flex-start;
     padding: 5px;
     margin-top: 10px;
-    margin-bottom: 140px;
+    margin-bottom: 100px;
 
 }
 
@@ -84,7 +92,31 @@
 }
 
 
-#randomBTN {
+#blueBTN {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-height: 20px;
+    min-width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#blueBTN:hover {
+    box-shadow: 0 5px 15px darkblue;
+    transition: 0.1s;
+}
+
+#blueBTN:active {
+    border: 5px;
+    border-color: white;
+    border-style: inset;
+}
+
+
+#greenBTN {
     background-color: green;
     color: white;
     border: none;
@@ -96,8 +128,32 @@
     margin-bottom: 5px;
 }
 
-#randomBTN:hover {
+#greenBTN:hover {
     box-shadow: 0 5px 15px darkgreen;
+    transition: 0.1s;
+}
+
+#greenBTN:active {
+    border: 5px;
+    border-color: white;
+    border-style: inset;
+}
+
+
+#randomBTN {
+    background-color: fuchsia;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-height: 20px;
+    min-width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#randomBTN:hover {
+    box-shadow: 0 5px 15px darkmagenta;
     transition: 0.1s;
 }
 
