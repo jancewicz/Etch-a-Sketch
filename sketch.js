@@ -48,6 +48,8 @@ const randomRGBmouseover = function () {
 }
 
 
+// Button functionality 
+
 function randomColor() {
     const squares = document.querySelectorAll(".box");
     squares.forEach(square => {
@@ -79,8 +81,10 @@ function removeColorChange() {
     })
 }
 
+/// Buttons 
+
 function redButton() {
-    const redButton = document.getElementById('colorBTN');
+    const redButton = document.getElementById('redBTN');
     redButton.addEventListener('click', function () {
         changeColor();
     });

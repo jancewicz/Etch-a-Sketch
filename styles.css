@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.test {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: blanchedalmond;
+}
+
+
 #header {
     display: flex;
     justify-content: center;
@@ -21,19 +33,99 @@
     border-color: black;
 }
 
-.containerBTN {
-    background-color: burlywood;
+
+.choice {
     display: flex;
+    align-self: flex-start;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 140px;
+
+}
+
+.containerBTN {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#btn {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 
 
 }
 
-#colorBTN {
-    background-color: transparent;
-    border: 0;
-    color: #fefbef;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    line-height: 1;
+
+#redBTN {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-height: 20px;
+    min-width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#redBTN:hover {
+    box-shadow: 0 5px 15px darkred;
+    transition: 0.1s;
+}
+
+#redBTN:active {
+    border: 5px;
+    border-color: white;
+    border-style: inset;
+}
+
+
+#randomBTN {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-height: 20px;
+    min-width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#randomBTN:hover {
+    box-shadow: 0 5px 15px darkgreen;
+    transition: 0.1s;
+}
+
+#randomBTN:active {
+    border: 5px;
+    border-color: white;
+    border-style: inset;
+}
+
+#clearBTN {
+    background-color: bisque;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    min-height: 20px;
+    min-width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#clearBTN:hover {
+    box-shadow: 0 5px 15px sandybrown;
+    transition: 0.1s;
+}
+
+#clearBTN:active {
+    border: 5px;
+    border-color: white;
+    border-style: inset;
 }
