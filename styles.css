@@ -188,11 +188,29 @@
 
 .slidecontainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     background-color: #d4b877;
+    align-items: center;
 }
 
 .slide {
     margin: 50px;
     width: 200px;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 200px;
+}
+
+option {
+    padding: 2px;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin: 0;
 }

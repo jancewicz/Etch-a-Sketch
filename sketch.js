@@ -1,8 +1,8 @@
 function printGrid(rows, cols) {
 
     if (arguments.length === 0) {
-        rows = 16;
-        cols = 16;
+        rows = 8;
+        cols = 8;
     }
     const container = document.getElementById("container");
     const square = document.getElementById("square");
@@ -150,7 +150,17 @@ function clearFieldButton() {
     })
 }
 
+// Range slider 
 
+function rangeSlider() {
+
+    const slider = document.getElementById("gridSlider");
+    slider.addEventListener("input", function () {
+        if (slider.value == 2) {
+            console.log("Value is 2");
+        }
+    });
+}
 
 printGrid();
 redButton();
@@ -158,3 +168,4 @@ blueButton();
 greenButton();
 clearFieldButton();
 getFunkyButton();
+rangeSlider();
