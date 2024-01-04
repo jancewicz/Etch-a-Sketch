@@ -1,25 +1,30 @@
+const container = document.getElementById("container");
+const square = document.getElementById("square");
+const slider = document.getElementById("gridSlider");
+
+const sliderValuesMap = {
+    1: { rows: 8, cols: 8 },
+    2: { rows: 16, cols: 16 },
+    3: { rows: 32, cols: 32 },
+    4: { rows: 64, cols: 64 }
+}
+
+let currentSize = { rows: 8, cols: 8 };
+let gridSize = 400;
+
 function printGrid(rows, cols) {
-
-    if (arguments.length === 0) {
-        rows = 8;
-        cols = 8;
-    }
-    const container = document.getElementById("container");
-    const square = document.getElementById("square");
-    let gridSize = 400;
+    container.innerHTML = " ";
     let squareSize = gridSize / Math.max(rows, cols);
-
-
 
     let style =
         `flex: 1; 
-        aspect-ratio: 1 / 1; 
-        border: auto; 
-        background-color: white; 
-        border-style: solid; 
-        border-color: black; 
-        width: ${squareSize}px; 
-        height: ${squareSize}px;`;
+    aspect-ratio: 1 / 1; 
+    border: auto; 
+    background-color: white; 
+    border-style: solid; 
+    border-color: black; 
+    width: ${squareSize}px; 
+    height: ${squareSize}px;`;
 
     for (let i = 0; i < rows; i++) {
         let row = document.createElement("div");
@@ -35,6 +40,17 @@ function printGrid(rows, cols) {
         container.appendChild(row);
     }
 }
+
+function updateGrid() {
+    let newGridSize = parseInt(slider.value);
+    let newCols = sliderValuesMap[newGridSize].cols;
+    let newRows = sliderValuesMap[newGridSize].rows;
+
+    printGrid(newRows, newCols);
+    currentSize = { rows: newRows, cols: newCols };
+
+}
+slider.addEventListener("input", updateGrid);
 
 function getRandomRGB() {
     nums = [];
@@ -150,19 +166,8 @@ function clearFieldButton() {
     })
 }
 
-// Range slider 
 
-function rangeSlider() {
-
-    const slider = document.getElementById("gridSlider");
-    slider.addEventListener("input", function () {
-        if (slider.value == 2) {
-            console.log("Value is 2");
-        }
-    });
-}
-
-printGrid();
+printGrid(currentSize.rows, currentSize.cols);
 redButton();
 blueButton();
 greenButton();
