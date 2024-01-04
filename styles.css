@@ -191,6 +191,8 @@
     flex-direction: column;
     background-color: #d4b877;
     align-items: center;
+    padding: 10px;
+    padding-bottom: 45px;
 }
 
 .slide {
@@ -213,4 +215,28 @@ option {
 input[type="range"] {
     width: 200px;
     margin: 0;
+}
+
+#signatureContainer {
+    display: flex;
+    justify-content: center;
+    background-color: #d4b877;
+    padding: 10px;
+    align-items: center;
+}
+
+#signature,
+#logo {
+    margin: 0;
+
+}
+
+#signature {
+    font-family: Trattatello, fantasy;
+    font-weight: 500;
+}
+
+#ghlogo {
+    width: 30px;
+    height: 30px;
 }
